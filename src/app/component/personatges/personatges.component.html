@@ -1,0 +1,20 @@
+<div class="container" style="text-align: center;">
+    <mat-spinner *ngIf="loading" ></mat-spinner>
+    <h1 >Personatges Disney</h1>
+   
+    <ul class="list_group">
+    <!-- <div [@cardAnimation]="personatges.length"> -->
+    <a *ngFor="let personatga of personatges" [routerLink]="['/image',personatga._id]" class="list-group-item list-group-item-action animate__animated animate__bounce animate__fadeIn">
+        <mat-card>
+            <mat-card-header>
+              <div mat-card-avatar><img mat-card-image src="{{personatga.imageUrl}}" class="circular" style="width: 5vw; height: 10vh;"></div>
+              <mat-card-title style="margin-left: 2rem;">{{personatga.name}}</mat-card-title>
+              <mat-card-subtitle style="margin-left: 2rem;">{{personatga._id}}</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>  
+    </a>
+    <!-- </div> -->
+    </ul>
+</div>
+
+

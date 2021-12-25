@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <mat-spinner *ngIf="loading" ></mat-spinner>
+    <div *ngIf="personatga" class="row animate__animated animate__bounce animate__fadeIn" >
+        <div class="col-md-9" style="text-align: right;">
+            <a class="btn btn-danger" routerLink="/">Back</a>
+        </div>
+        <div class="coo-md-9">          
+            <h1><strong>Name:</strong>{{personatga.name}}</h1>
+          
+            <img style="width: 40vw; height: 60vh;" class="rounded" src="{{personatga.imageUrl}}" alt="">
+        </div>
+        <div class="col-md-3">
+            <a class="btn btn-info" (click)="ShowDetails()">Show All Details</a>
+        </div>
+        <div *ngIf="show">
+            <mat-tab-group mat-align-tabs="start">
+                <mat-tab label="Identifier">
+                    <p *ngIf="personatga._id">{{personatga._id}}</p>
+                    <p *ngIf="!personatga._id">No ID!</p>
+                </mat-tab>
+                <mat-tab label="Films">
+                    <p *ngIf="personatga.films.length > 0">{{personatga.films}}</p>
+                    <p *ngIf="personatga.films.length == 0">No Films!</p>
+                </mat-tab>
+                <mat-tab label="Short Films">
+                    <p *ngIf="personatga.shortFilms.length > 0">{{personatga.shortFilms}}</p>
+                    <p *ngIf="personatga.shortFilms.length == 0">No Short Films!</p>
+                </mat-tab>
+                <mat-tab label="TV Shows">
+                    <p *ngIf="personatga.tvShows.length > 0">{{personatga.tvShows}}</p>
+                    <p *ngIf="personatga.tvShows.length == 0">No TV Shows!</p>
+                </mat-tab>
+                <mat-tab label="VideoGames">
+                    <p *ngIf="personatga.videoGames.length > 0">{{personatga.videoGames}}</p>
+                    <p *ngIf="personatga.videoGames.length == 0">No Videogames!</p>
+                </mat-tab>
+                <mat-tab label="Park Atractions">
+                    <p *ngIf="personatga.parkAttractions.length > 0">{{personatga.parkAttractions}}</p>
+                    <p *ngIf="personatga.parkAttractions.length == 0">No park Attractions!</p>
+                </mat-tab>
+                <mat-tab label="Allies">
+                    <p *ngIf="personatga.allies.length > 0">{{personatga.allies}}</p>
+                    <p *ngIf="personatga.allies.length == 0">No allies!</p>
+                </mat-tab>
+                <mat-tab label="Enemis">
+                    <p *ngIf="personatga.enemies.length > 0">{{personatga.enemies}}</p>
+                    <p *ngIf="personatga.enemies.length == 0">No enemies!</p>
+                </mat-tab>
+              </mat-tab-group>
+        </div>
+  
+     
+</div>
